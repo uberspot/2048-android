@@ -13,4 +13,4 @@ Play store link: https://play.google.com/store/apps/details?id=com.uberspot.a204
 
 ##License
 
-2048-android is licensed under the [MIT license.](https://github.com/uberspot/2048-android/blob/master/LICENSE.txt)
+2048-android is licensed under the [MIT license.](https://github.com/uberspot/2048-android/blob/master/LICENSE)
