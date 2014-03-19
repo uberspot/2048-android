@@ -5,7 +5,6 @@ import com.uberspot.a2048.R;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.webkit.WebView;
 import android.widget.Toast;
