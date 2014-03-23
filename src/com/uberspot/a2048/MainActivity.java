@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 	    long currentTime = System.currentTimeMillis();
 	    Toast pressBackToast = Toast.makeText(getApplicationContext(), 
         					R.string.press_back_again_to_exit, Toast.LENGTH_SHORT);
-	    if (currentTime - mLastPress > mBackPressThreshold) {
+	    if (Math.abs(currentTime - mLastPress) > mBackPressThreshold) {
 	        pressBackToast.show();
 	        mLastPress = currentTime;
 	    } else {
