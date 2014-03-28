@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.Menu;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
@@ -21,8 +22,12 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		mWebView = (WebView) findViewById(R.id.mainWebView);
-		mWebView.getSettings().setJavaScriptEnabled(true);
-		mWebView.getSettings().setDomStorageEnabled(true);
+		WebSettings settings = mWebView.getSettings();
+		String packageName = "com.uberspot.a2048";
+		settings.setJavaScriptEnabled(true);
+		settings.setDomStorageEnabled(true);
+		settings.setDatabaseEnabled(true);
+		settings.setDatabasePath("/data/data/" + packageName + "/databases");
 		
 		if (savedInstanceState != null) {
 			mWebView.restoreState(savedInstanceState);
