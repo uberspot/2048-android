@@ -22,11 +22,12 @@ public class MainActivity extends Activity {
 
 	private WebView mWebView;
 	private long mLastBackPress;
-	private static final long mBackPressThreshold = 4000;
+	private static final long mBackPressThreshold = 3500;
 	private static final String IS_FULLSCREEN_PREF = "is_fullscreen_pref";
 	private static boolean DEF_FULLSCREEN = true;
 	private long mLastTouch;
 	private static final long mTouchThreshold = 2000;
+	private Toast pressBackToast;
 	
 	@SuppressLint("SetJavaScriptEnabled")
 	@Override
@@ -73,6 +74,9 @@ public class MainActivity extends Activity {
 				// by the webview as well
 				return false;
 			}});
+		
+		pressBackToast = Toast.makeText(getApplicationContext(), 
+				R.string.press_back_again_to_exit, Toast.LENGTH_SHORT);
 	}
 
 	@Override
@@ -112,8 +116,6 @@ public class MainActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 	    long currentTime = System.currentTimeMillis();
-	    Toast pressBackToast = Toast.makeText(getApplicationContext(), 
-        					R.string.press_back_again_to_exit, Toast.LENGTH_SHORT);
 	    if (Math.abs(currentTime - mLastBackPress) > mBackPressThreshold) {
 	        pressBackToast.show();
 	        mLastBackPress = currentTime;
