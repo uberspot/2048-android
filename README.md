@@ -11,6 +11,14 @@ specific improvements in mind.
 
 Play store link: https://play.google.com/store/apps/details?id=com.uberspot.a2048
 
+##Building
+
+If you want to build from source just do 
+
+    git clone https://github.com/uberspot/2048-android.git
+    cd 2048-android/
+    git submodule update --recursive 
+
 ##License
 
 2048-android is licensed under the [MIT license.](https://github.com/uberspot/2048-android/blob/master/LICENSE)
