@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
@@ -113,6 +114,12 @@ public class MainActivity extends Activity {
 	            WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	  super.onConfigurationChanged(newConfig);
+	}
+	
 	@Override
 	public void onBackPressed() {
 	    long currentTime = System.currentTimeMillis();
