@@ -1,13 +1,12 @@
 package com.uberspot.a2048;
 
-import com.uberspot.a2048.R;
-
-import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
@@ -29,17 +28,20 @@ public class MainActivity extends Activity {
 	private long mLastTouch;
 	private static final long mTouchThreshold = 2000;
 	private Toast pressBackToast;
-	
+
 	@SuppressLint("SetJavaScriptEnabled")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		applyFullScreen(isFullScreen());
-		
+		if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+				== Configuration.SCREENLAYOUT_SIZE_LARGE) {
+			setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+		}
 		setContentView(R.layout.activity_main);
-		
+
 		mWebView = (WebView) findViewById(R.id.mainWebView);
 		WebSettings settings = mWebView.getSettings();
 		String packageName = getPackageName();
@@ -47,13 +49,13 @@ public class MainActivity extends Activity {
 		settings.setDomStorageEnabled(true);
 		settings.setDatabaseEnabled(true);
 		settings.setDatabasePath("/data/data/" + packageName + "/databases");
-		
+
 		if (savedInstanceState != null) {
 			mWebView.restoreState(savedInstanceState);
 	    } else {
 	    	mWebView.loadUrl("file:///android_asset/2048/index.html");
 	    }
-		Toast.makeText(getApplication(), 
+		Toast.makeText(getApplication(),
 				R.string.toggle_fullscreen, Toast.LENGTH_SHORT).show();
 		mWebView.setOnTouchListener(new OnTouchListener() {
 			@Override
@@ -75,8 +77,8 @@ public class MainActivity extends Activity {
 				// by the webview as well
 				return false;
 			}});
-		
-		pressBackToast = Toast.makeText(getApplicationContext(), 
+
+		pressBackToast = Toast.makeText(getApplicationContext(),
 				R.string.press_back_again_to_exit, Toast.LENGTH_SHORT);
 	}
 
@@ -84,14 +86,14 @@ public class MainActivity extends Activity {
 	protected void onSaveInstanceState(Bundle outState) {
 		mWebView.saveState(outState);
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		//getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
+
 	private void saveFullScreen(boolean isFullScreen) {
 		// save in preferences
 		SharedPreferences.Editor editor = PreferenceManager
@@ -105,7 +107,7 @@ public class MainActivity extends Activity {
 				.getDefaultSharedPreferences(this)
 				.getBoolean(IS_FULLSCREEN_PREF, DEF_FULLSCREEN);
 	}
-	
+
 	private void applyFullScreen(boolean isFullScreen) {
 		if(isFullScreen) {
 			getWindow().clearFlags(LayoutParams.FLAG_FULLSCREEN);
@@ -114,12 +116,12 @@ public class MainActivity extends Activity {
 	            WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 	}
-	
+
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 	  super.onConfigurationChanged(newConfig);
 	}
-	
+
 	@Override
 	public void onBackPressed() {
 	    long currentTime = System.currentTimeMillis();
