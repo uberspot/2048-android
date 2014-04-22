@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -17,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.webkit.WebSettings;
+import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebView;
 import android.widget.Toast;
 
@@ -31,13 +33,20 @@ public class MainActivity extends Activity {
 	private static final long mTouchThreshold = 2000;
 	private Toast pressBackToast;
 
-	@SuppressLint("SetJavaScriptEnabled")
+	@SuppressLint({ "SetJavaScriptEnabled", "NewApi", "ShowToast" })
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		// Don't show an action bar or title
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		// If on android 3.0+ activate hardware acceleration
+		if (Build.VERSION.SDK_INT >= 11){
+            getWindow().setFlags(
+                    WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
+                    WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
+        }
 
 		// Apply previous setting about showing status bar or not
 		applyFullScreen(isFullScreen());
@@ -66,6 +75,7 @@ public class MainActivity extends Activity {
 		settings.setJavaScriptEnabled(true);
 		settings.setDomStorageEnabled(true);
 		settings.setDatabaseEnabled(true);
+		settings.setRenderPriority(RenderPriority.HIGH);
 		settings.setDatabasePath("/data/data/" + packageName + "/databases");
 
 		// If there is a previous instance restore it in the webview
@@ -84,9 +94,7 @@ public class MainActivity extends Activity {
 				// Implement a long touch action by comparing
 				// time between action up and action down
 				long currentTime = System.currentTimeMillis();
-				if (event.getAction() == MotionEvent.ACTION_MOVE) {
-					return false;
-				} else if(event.getAction() == MotionEvent.ACTION_UP &&
+			    if(event.getAction() == MotionEvent.ACTION_UP &&
 						Math.abs(currentTime - mLastTouch) > mTouchThreshold) {
 			    	boolean toggledFullScreen = !isFullScreen();
 					saveFullScreen(toggledFullScreen);
