@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="press_back_again_to_exit">Appuyez encore sur retour pour quitter</string>
+    <string name="toggle_fullscreen">Appuyez longtemps pour passer en mode plein écran</string>
+
+</resources>
+
