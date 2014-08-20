@@ -15,9 +15,17 @@ Play store link: https://play.google.com/store/apps/details?id=com.uberspot.a204
 
 If you want to build from source just do 
 
-    git clone https://github.com/uberspot/2048-android.git
+    git clone --recursive https://github.com/uberspot/2048-android.git
     cd 2048-android/
-    git submodule update --recursive 
+    ./gradlew build
+    
+### With Eclipse
+
+1. Copy `https://github.com/uberspot/2048-android.git` to clipboard
+2. File -> Import -> Git / Projects from Git -> Clone URI
+3. Paste URI from clipboard (if it did not appeared automatically)
+4. Next> Next> **Check "Clone submodules"**
+5. Next> select "Import existing project"       
 
 ##License
 
