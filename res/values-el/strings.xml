@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">Ρυθμίσεις</string>
+    <string name="press_back_again_to_exit">Πατήστε \'πίσω\' ξανά για έξοδο</string>
+	<string name="toggle_fullscreen">Πατήστε για ώρα την οθόνη για να μεγιστοποίηση/σμίκρυνση παραθύρου</string>
+	
+</resources>
