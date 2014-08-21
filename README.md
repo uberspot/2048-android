@@ -11,6 +11,8 @@ specific improvements in mind.
 
 Play store link: https://play.google.com/store/apps/details?id=com.uberspot.a2048
 
+![](screenshots/screen1.png)
+
 ##Building
 
 If you want to build from source just do 
