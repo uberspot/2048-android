@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="press_back_again_to_exit">Naciśnij ponownie, aby wyjść</string>
+	<string name="toggle_fullscreen">Trzymaj nacisk na pare sekund, aby zmienic na pełny ekran</string>
+	
+</resources>
