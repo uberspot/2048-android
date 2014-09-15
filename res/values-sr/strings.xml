@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">Подешавања</string>
+    <string name="press_back_again_to_exit">Притисните поново тастер за враћање ради изласка из апликације</string>
+    <string name="toggle_fullscreen">Додирните и задржите прст на екрану за пребацивање апликације у режим пуног екрана</string>
+
+</resources>
