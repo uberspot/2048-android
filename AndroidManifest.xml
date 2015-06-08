@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uberspot.a2048"
-    android:versionCode="18"
-    android:versionName="1.95" >
+    android:versionCode="19"
+    android:versionName="1.96" >
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="20" />
+        android:targetSdkVersion="22" />
 
     <application
         android:allowBackup="true"
