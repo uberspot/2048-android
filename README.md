@@ -19,6 +19,7 @@ If you want to build from source just do
 
     git clone --recursive https://github.com/uberspot/2048-android.git
     cd 2048-android/
+    git submodule update --init --recursive
     ./gradlew build
     
 ### With Eclipse
