@@ -1,0 +1,12 @@
+{
+  "docker":
+  {
+    "prettyName": "android",
+    "image": "android",
+    "beforeScripts": [
+      "git submodule update --init --recursive"
+    ],
+    "testCommand": "gradle build"
+  }
+
+}
