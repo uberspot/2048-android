@@ -6,7 +6,7 @@
     "beforeScripts": [
       "git submodule update --init --recursive"
     ],
-    "buildCommand": "gradle build"
+    "buildCommand": "gradle builda"
   }
 
 }
