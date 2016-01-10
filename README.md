@@ -11,7 +11,9 @@ specific improvements in mind.
 
 Play store link: https://play.google.com/store/apps/details?id=com.uberspot.a2048
 
-![](screenshots/screen1.png)
+**This branch *undo-feature* implements a basic Undo button, that can revert the steps taken by the user indefinitely until the original start state is reached.**
+    
+![](screenshots/screen2.png)
 
 ##Building
 
