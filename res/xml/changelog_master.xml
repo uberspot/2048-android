@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="2.06" versioncode="22" >
+        <change>Limit undo button to last 50 states to avoid using too much memory.</change>
+    </release>
     <release version="2.05" versioncode="21" >
         <change>Added changelog in app</change>
     </release>
