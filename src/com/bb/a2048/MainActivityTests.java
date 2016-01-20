@@ -1,4 +1,4 @@
-package com.uberspot.a2048;
+package com.bb.a2048;
 
 /**
  * Created by tingshi on 12/11/15.
