@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">Agordoj</string>
+    <string name="press_back_again_to_exit">Premu reen denove por eliri</string>
+	<string name="toggle_fullscreen">Premu longe por baskuligi tutekrane</string>
+	
+</resources>
