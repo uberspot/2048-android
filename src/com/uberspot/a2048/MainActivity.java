@@ -135,6 +135,11 @@ public class MainActivity extends Activity {
         // getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    
+    /**
+     * Saves the full screen setting in the SharedPreferences
+     * @param isFullScreen
+     */
 
     private void saveFullScreen(boolean isFullScreen) {
         // save in preferences
@@ -165,7 +170,13 @@ public class MainActivity extends Activity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
-
+    
+    /**
+     * Prevents app from closing on pressing back button accidentally.
+     * mBackPressThreshold specifies the maximum delay (ms) between two consecutive backpress to
+     * quit the app.
+     */
+    
     @Override
     public void onBackPressed() {
         long currentTime = System.currentTimeMillis();
