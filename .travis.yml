@@ -3,11 +3,13 @@ language: android
 android:
     components:
         - tools
-        - build-tools-23.0.2
-        - android-23
+        - build-tools-24.0.1
+        - android-24
         - platform-tools
         - extra-android-support
         - extra-android-m2repository
 
+jdk:
+    - oraclejdk8
 script:
     - ./gradlew build
