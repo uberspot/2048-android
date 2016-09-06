@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="2.08" versioncode="23" >
+        <change>Added Esperanto and Dutch (thx Robin van der Vliet).</change>
+        <change>Fix bug with floating windows (thx diogopereira)</change>
+    </release>
     <release version="2.06" versioncode="22" >
         <change>Limit undo button to last 50 states to avoid using too much memory.</change>
     </release>
@@ -13,7 +17,7 @@
         <change>Rebuilt apk with new build tools.</change>
     </release>
     <release version="1.95" versioncode="18">
-        <change>Added German, Spanish, Polish, Serbian translations thx to contributors in githube</change>
+        <change>Added German, Spanish, Polish, Serbian translations thx to contributors in github</change>
         <change>Added experimental night mode button</change>
         <change>Minor optimizations to responsiveness</change>
     </release>
