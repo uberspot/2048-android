@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">설정</string>
+    <string name="press_back_again_to_exit">\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.</string>
+    <string name="toggle_fullscreen">화면 모드 변경을 하려면 화면을 길게 누르세요.</string>
+
+</resources>
