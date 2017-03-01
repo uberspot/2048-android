@@ -26,3 +26,9 @@ proguard/
 # Gradle stuff
 build
 .gradle
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+project.properties
