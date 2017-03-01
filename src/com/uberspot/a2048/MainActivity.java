@@ -1,6 +1,8 @@
 
 package com.uberspot.a2048;
 
+import java.util.Locale;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -92,9 +94,11 @@ public class MainActivity extends Activity {
 
         // If there is a previous instance restore it in the webview
         if (savedInstanceState != null) {
+        	// TODO: If app was minimized and Locale language was changed, we need to reload webview with changed language
             mWebView.restoreState(savedInstanceState);
         } else {
-            mWebView.loadUrl("file:///android_asset/2048/index.html");
+        	// Load webview with current Locale language
+            mWebView.loadUrl("file:///android_asset/2048/index.html?lang=" + Locale.getDefault().getLanguage());
         }
 
         Toast.makeText(getApplication(), R.string.toggle_fullscreen, Toast.LENGTH_SHORT).show();
