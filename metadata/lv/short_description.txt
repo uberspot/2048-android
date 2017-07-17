@@ -1,0 +1,1 @@
+2048 Puzzle spēle. Tas ir android open source portu.

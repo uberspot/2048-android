@@ -1,0 +1,1 @@
+2048 joc de puzzle. Acesta este portul open source Android.
