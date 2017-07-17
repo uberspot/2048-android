@@ -1,0 +1,1 @@
+2048 puzzle mäng. See on Android avatud lähtekoodiga sadama.

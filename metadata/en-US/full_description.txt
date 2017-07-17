@@ -1,0 +1,12 @@
+2048 Puzzle Game
+
+-------------------------------
+
+This is the android port of the 2048 game made by Gabriele Cirulli https://github.com/gabrielecirulli/2048               
+It's just a webview that loads the locally stored HTML files of the original game.
+No ads, no permissions required. Just open source. :) 
+I just wanted to make it instantly playable without Internet and with a quick access icon for my smartphone. It is a bit slower than native code since everything runs in an android webview. If you want you can contribute fixes/speedups here https://github.com/uberspot/2048 
+
+Long touch for 3+ seconds anywhere on the game if you want to toggle the fullscreen mode.
+
+You can view the code here https://github.com/uberspot/2048-android
