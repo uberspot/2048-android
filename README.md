@@ -11,7 +11,10 @@ a quick access icon for my smartphone.
 Feel free to contribute with pull requests to the original project by Gabriele or to this one if you have any android
 specific improvements in mind.
 
-Play store link: https://play.google.com/store/apps/details?id=com.uberspot.a2048
+<a href="https://f-droid.org/packages/com.uberspot.a2048/" target="_blank">
+<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="100"/></a>
+<a href="https://play.google.com/store/apps/details?id=com.uberspot.a2048" target="_blank">
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="100"/></a>
 
 ![](screenshots/screen1.png)
 
