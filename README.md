@@ -18,7 +18,7 @@ specific improvements in mind.
 
 ![](screenshots/screen1.png)
 
-##Building
+## Building
 
 If you want to build from source just do
 
@@ -41,6 +41,6 @@ If you want to build from source just do
 2. In Android Studio selection "Open an Existing Android Studio Project"
 3. When prompted, add the VCS root.
 
-##License
+## License
 
 2048-android is licensed under the [MIT license.](https://github.com/uberspot/2048-android/blob/master/LICENSE)
