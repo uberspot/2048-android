@@ -1,1 +1,1 @@
-2048 Puzzle Game. Questa è la porta open source Android.
+2048 Puzzle Game. Questa è la versione open source per Android.
