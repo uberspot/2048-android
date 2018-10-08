@@ -4,9 +4,7 @@
     android:versionCode="23"
     android:versionName="2.08" >
 
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="24" />
+    <uses-sdk android:targetSdkVersion="24" />
 
     <application
         android:allowBackup="true"
