@@ -20,7 +20,7 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 26
 
     sourceSets {
         main {
@@ -47,7 +47,7 @@ android {
     }
     defaultConfig {
         minSdkVersion 8
-        targetSdkVersion 24
+        targetSdkVersion 26
 
     }
 }
