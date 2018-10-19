@@ -14,7 +14,6 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -84,7 +83,7 @@ public class MainActivity extends Activity {
         }
 
         // Load webview with game
-        mWebView = (WebView) findViewById(R.id.mainWebView);
+        mWebView = findViewById(R.id.mainWebView);
         WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
@@ -132,13 +131,6 @@ public class MainActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         mWebView.saveState(outState);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        // getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
     
     /**
      * Saves the full screen setting in the SharedPreferences
@@ -168,11 +160,6 @@ public class MainActivity extends Activity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
     }
     
     /**
