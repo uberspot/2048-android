@@ -1,1 +1,1 @@
-2048 Puzzle Game. This is the android open source port.
+Android open-source port of the "2048" puzzle game.
