@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uberspot.a2048"
-    android:versionCode="23"
-    android:versionName="2.08" >
+    package="com.uberspot.a2048">
 
     <application
         android:allowBackup="true"
