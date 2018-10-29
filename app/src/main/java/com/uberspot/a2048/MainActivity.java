@@ -1,7 +1,4 @@
-
 package com.uberspot.a2048;
-
-import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -15,8 +12,6 @@ import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
@@ -24,6 +19,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 import de.cketti.library.changelog.ChangeLog;
 
@@ -40,7 +37,7 @@ public class MainActivity extends Activity {
     private static final long mTouchThreshold = 2000;
     private Toast pressBackToast;
 
-    @SuppressLint({ "SetJavaScriptEnabled", "NewApi", "ShowToast" })
+    @SuppressLint({"SetJavaScriptEnabled", "NewApi", "ShowToast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +68,7 @@ public class MainActivity extends Activity {
                 & Configuration.SCREENLAYOUT_SIZE_MASK;
         if (((screenLayout == Configuration.SCREENLAYOUT_SIZE_LARGE)
                 || (screenLayout == Configuration.SCREENLAYOUT_SIZE_XLARGE))
-                    && isOrientationEnabled) {
+                && isOrientationEnabled) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         }
 
@@ -95,31 +92,27 @@ public class MainActivity extends Activity {
         if (savedInstanceState != null) {
             mWebView.restoreState(savedInstanceState);
         } else {
-        	// Load webview with current Locale language
+            // Load webview with current Locale language
             mWebView.loadUrl("file:///android_asset/2048/index.html?lang=" + Locale.getDefault().getLanguage());
         }
 
         Toast.makeText(getApplication(), R.string.toggle_fullscreen, Toast.LENGTH_SHORT).show();
         // Set fullscreen toggle on webview LongClick
-        mWebView.setOnTouchListener(new OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                // Implement a long touch action by comparing
-                // time between action up and action down
-                long currentTime = System.currentTimeMillis();
-                if ((event.getAction() == MotionEvent.ACTION_UP)
-                        && (Math.abs(currentTime - mLastTouch) > mTouchThreshold)) {
-                    boolean toggledFullScreen = !isFullScreen();
-                    saveFullScreen(toggledFullScreen);
-                    applyFullScreen(toggledFullScreen);
-                } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    mLastTouch = currentTime;
-                }
-                // return so that the event isn't consumed but used
-                // by the webview as well
-                return false;
+        mWebView.setOnTouchListener((v, event) -> {
+            // Implement a long touch action by comparing
+            // time between action up and action down
+            long currentTime = System.currentTimeMillis();
+            if ((event.getAction() == MotionEvent.ACTION_UP)
+                    && (Math.abs(currentTime - mLastTouch) > mTouchThreshold)) {
+                boolean toggledFullScreen = !isFullScreen();
+                saveFullScreen(toggledFullScreen);
+                applyFullScreen(toggledFullScreen);
+            } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                mLastTouch = currentTime;
             }
+            // return so that the event isn't consumed but used
+            // by the webview as well
+            return false;
         });
 
         pressBackToast = Toast.makeText(getApplicationContext(), R.string.press_back_again_to_exit,
@@ -136,9 +129,10 @@ public class MainActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         mWebView.saveState(outState);
     }
-    
+
     /**
      * Saves the full screen setting in the SharedPreferences
+     *
      * @param isFullScreen
      */
 
@@ -155,7 +149,8 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * Toggles the activitys fullscreen mode by setting the corresponding window flag
+     * Toggles the activity's fullscreen mode by setting the corresponding window flag
+     *
      * @param isFullScreen
      */
     private void applyFullScreen(boolean isFullScreen) {
@@ -166,13 +161,13 @@ public class MainActivity extends Activity {
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
     }
-    
+
     /**
      * Prevents app from closing on pressing back button accidentally.
      * mBackPressThreshold specifies the maximum delay (ms) between two consecutive backpress to
      * quit the app.
      */
-    
+
     @Override
     public void onBackPressed() {
         long currentTime = System.currentTimeMillis();

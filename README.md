@@ -36,7 +36,7 @@ If you want to build from source, just do
 ### With Android Studio
 
 1. Follow first three lines of Building directions.
-2. In Android Studio selection "Open Existing Android Studio Project"
+2. In Android Studio selection "Open an existing Android Studio Project"
 3. When prompted, add the VCS root.
 
 ## License
