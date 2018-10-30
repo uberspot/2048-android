@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">Nastavení</string>
+    <string name="press_back_again_to_exit">Pro odchod stisknětě znovu tlačítko zpět</string>
+	<string name="toggle_fullscreen">Dlohým kliknutím přepnete na celou obrazovku</string>
+	
+</resources>
