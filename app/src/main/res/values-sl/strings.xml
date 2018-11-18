@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">Nastavitve</string>
+    <string name="press_back_again_to_exit">Ponovni pritisk nazaj konča program.</string>
+    <string name="toggle_fullscreen">Z dolgim pritiskom se preklopi celozaslonski način.</string>
+
+</resources>
