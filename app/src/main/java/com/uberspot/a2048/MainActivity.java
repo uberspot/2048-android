@@ -32,12 +32,11 @@ public class MainActivity extends Activity {
     private long mLastBackPress;
     private static final long mBackPressThreshold = 3500;
     private static final String IS_FULLSCREEN_PREF = "is_fullscreen_pref";
-    private static boolean DEF_FULLSCREEN = true;
     private long mLastTouch;
     private static final long mTouchThreshold = 2000;
     private Toast pressBackToast;
 
-    @SuppressLint({"SetJavaScriptEnabled", "NewApi", "ShowToast"})
+    @SuppressLint({"SetJavaScriptEnabled", "NewApi", "ShowToast", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,7 +132,7 @@ public class MainActivity extends Activity {
     /**
      * Saves the full screen setting in the SharedPreferences
      *
-     * @param isFullScreen
+     * @param isFullScreen boolean value
      */
 
     private void saveFullScreen(boolean isFullScreen) {
@@ -145,13 +144,13 @@ public class MainActivity extends Activity {
 
     private boolean isFullScreen() {
         return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(IS_FULLSCREEN_PREF,
-                DEF_FULLSCREEN);
+                true);
     }
 
     /**
      * Toggles the activity's fullscreen mode by setting the corresponding window flag
      *
-     * @param isFullScreen
+     * @param isFullScreen boolean value
      */
     private void applyFullScreen(boolean isFullScreen) {
         if (isFullScreen) {
