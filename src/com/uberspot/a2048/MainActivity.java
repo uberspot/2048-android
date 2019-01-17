@@ -2,10 +2,9 @@ package com.uberspot.a2048;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -13,7 +12,6 @@ import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.Window;
-import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.RenderPriority;
@@ -22,7 +20,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-import de.cketti.library.changelog.ChangeLog;
+import de.cketti.changelog.dialog.DialogChangeLog;
 
 public class MainActivity extends Activity {
 
@@ -36,7 +34,7 @@ public class MainActivity extends Activity {
     private static final long mTouchThreshold = 2000;
     private Toast pressBackToast;
 
-    @SuppressLint({"SetJavaScriptEnabled", "NewApi", "ShowToast", "ClickableViewAccessibility"})
+    @SuppressLint({"SetJavaScriptEnabled", "ShowToast", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +42,9 @@ public class MainActivity extends Activity {
         // Don't show an action bar or title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        // If on android 3.0+ activate hardware acceleration
-        if (Build.VERSION.SDK_INT >= 11) {
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
-                    WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
-        }
+        // Enable hardware acceleration
+        getWindow().setFlags(LayoutParams.FLAG_HARDWARE_ACCELERATED,
+                LayoutParams.FLAG_HARDWARE_ACCELERATED);
 
         // Apply previous setting about showing status bar or not
         applyFullScreen(isFullScreen());
@@ -73,9 +69,9 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        ChangeLog cl = new ChangeLog(this);
-        if (cl.isFirstRun()) {
-            cl.getLogDialog().show();
+        DialogChangeLog changeLog = DialogChangeLog.newInstance(this);
+        if (changeLog.isFirstRun()) {
+            changeLog.getLogDialog().show();
         }
 
         // Load webview with game
@@ -137,9 +133,9 @@ public class MainActivity extends Activity {
 
     private void saveFullScreen(boolean isFullScreen) {
         // save in preferences
-        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
         editor.putBoolean(IS_FULLSCREEN_PREF, isFullScreen);
-        editor.commit();
+        editor.apply();
     }
 
     private boolean isFullScreen() {
@@ -156,8 +152,8 @@ public class MainActivity extends Activity {
         if (isFullScreen) {
             getWindow().clearFlags(LayoutParams.FLAG_FULLSCREEN);
         } else {
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            getWindow().setFlags(LayoutParams.FLAG_FULLSCREEN,
+                    LayoutParams.FLAG_FULLSCREEN);
         }
     }
 

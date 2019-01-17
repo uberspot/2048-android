@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelog xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+    <release
+        version="2.2"
+        versioncode="25">
+        <change>(2.2) Bumped minSdkVersion from 8 (Froyo) to 14 (ICS)</change>
+        <change>(2.2) Update changelog library that had breaking changes</change>
+        <change>(2.1) Detect and utilise the phone's system language (thank you BValeo)</change>
+        <change>(2.1) Added Slovenian translation (thank you urmatej)</change>
+        <change>(2.1) Added Czech translation (thank you Mongata)</change>
+        <change>(2.1) Added Italian translation (thank you RyuzakiKK)</change>
+    </release>
+    <release
+        version="2.1"
+        versioncode="24">
+        <change>~~Bad build. This version of the app crashed on startup due to a user-made (*cough*
+            Taco *cough*) error that occurred when rearranging the project. Changes introduced in
+            2.1 will be mentioned in the 2.2 changelog.~~
+        </change>
+    </release>
+    <release
+        version="2.08"
+        versioncode="23">
+        <change>Added Esperanto and Dutch (thx Robin van der Vliet)</change>
+        <change>Fix bug with floating windows (thx diogopereira)</change>
+    </release>
+    <release
+        version="2.06"
+        versioncode="22">
+        <change>Limit undo button to last 50 moves to avoid using too much memory</change>
+    </release>
+    <release
+        version="2.05"
+        versioncode="21">
+        <change>Added changelog in app</change>
+    </release>
+    <release
+        version="2.0"
+        versioncode="20">
+        <change>Added undo button (thx to fraggerfox on GitHub)</change>
+    </release>
+    <release
+        version="1.96"
+        versioncode="19">
+        <change>Rebuilt APK with new buildTools</change>
+    </release>
+    <release
+        version="1.95"
+        versioncode="18">
+        <change>Added German, Spanish, Polish, Serbian translations (thx to contributors on GitHub)
+        </change>
+        <change>Added experimental night mode button</change>
+        <change>Minor optimizations to responsiveness</change>
+    </release>
+    <release
+        version="1.91"
+        versioncode="18">
+        <change>Added Greek and French app translation; minor build improvements</change>
+    </release>
+</changelog>
