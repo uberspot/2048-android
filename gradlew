@@ -10,6 +10,17 @@
 # Resolve links: $0 may be a link
 PRG="$0"
 # Need this for relative symlinks.
+
+0.62s
+$ git submodule update --init --recursive
+557
+Submodule 'assets/2048' (https://github.com/uberspot/2048.git) registered for path 'assets/2048'
+558
+Cloning into '/home/travis/build/uberspot/2048-android/assets/2048'...
+559
+Submodule path 'assets/2048': checked out '7a477ebd511a500076dc46742938db67f21aab94'
+560
+$ export TERM=dumb
 while [ -h "$PRG" ] ; do
     ls=`ls -ld "$PRG"`
     link=`expr "$ls" : '.*-> \(.*\)$'`
