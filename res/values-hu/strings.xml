@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">2048</string>
+    <string name="action_settings">Beállítások</string>
+    <string name="press_back_again_to_exit">A kilépéshez nyomja meg kétszer a vissza gombot</string>
+    <string name="toggle_fullscreen">Hosszú kattintás a teljes képernyőre váltáshoz</string>
+</resources>
