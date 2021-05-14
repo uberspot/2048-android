@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">۲۰۴۸</string>
+    <string name="action_settings">تنظیمات</string>
+    <string name="press_back_again_to_exit">دوباره کلیک کنید تا از بازی خارج شوید</string>
+    <string name="toggle_fullscreen">کلیک کنید و نگه دارید تا صفحه فول اسکرین شود</string>
+
+</resources>
