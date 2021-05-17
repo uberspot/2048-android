@@ -2,16 +2,23 @@ package com.uberspot.a2048;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
+import android.view.Display;
 import android.view.MotionEvent;
+import android.view.OrientationEventListener;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.RenderPriority;
@@ -34,10 +41,35 @@ public class MainActivity extends Activity {
     private static final long mTouchThreshold = 2000;
     private Toast pressBackToast;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @SuppressLint({"SetJavaScriptEnabled", "ShowToast", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        final WindowManager mWindowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+//
+//        OrientationEventListener orientationEventListener = new OrientationEventListener(this,
+//                SensorManager.SENSOR_DELAY_NORMAL) {
+//            @Override
+//            public void onOrientationChanged(int orientation) {
+//                if (orientation == ORIENTATION_UNKNOWN) {
+//                    return;
+//                }
+//                Display display = mWindowManager.getDefaultDisplay();
+//                int rotation = display.getRotation();
+//                if (rotation != mLastRotation) {
+//                    // do something with your views
+//                    mLastRotation = rotation;
+//                }
+//            }
+//        };
+//
+//        if (orientationEventListener.canDetectOrientation()) {
+//            orientationEventListener.enable();
+//        }
+//
+
 
         // Don't show an action bar or title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
