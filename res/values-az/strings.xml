@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">2048</string>
+    <string name="action_settings">Parametrlər</string>
+    <string name="press_back_again_to_exit">çıxmaq üçün yenidən geri basın</string>
+    <string name="toggle_fullscreen">tam ekranı dəyişdirmək üçün uzun vurun</string>
+
+</resources>
