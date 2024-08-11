@@ -2,6 +2,12 @@
 <changelog xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingDefaultResource">
     <release
+        version="2.3"
+        versioncode="26">
+        <change> (2.3) Bumped minSdkVersion from 14 to 28 </change>
+        <change> (2.3) Bumped targetSdkVersion from 28 to 34 </change>
+    </release>
+    <release
         version="2.2"
         versioncode="25">
         <change>(2.2) Bumped minSdkVersion from 8 (Froyo) to 14 (ICS)</change>
